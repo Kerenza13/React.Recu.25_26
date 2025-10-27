@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "name": "Admin Principal",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "editor",
+      "password": "editor123",
+      "name": "Editora del Blog",
+      "role": "editor"
+    },
+    {
+      "id": "4ea4",
+      "username": "cmd",
+      "password": "cmd123",
+      "name": "carlos",
+      "role": "user"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Bienvenido a mi blog",
+      "slug": "bienvenido-a-mi-blog",
+      "authorId": 1,
+      "authorName": "Admin Principal",
+      "excerpt": "Primer post de bienvenida donde explico la temática del blog.",
+      "content": "¡Hola! Este es el primer post del blog. Aquí contaré novedades, tutoriales y reflexiones sobre desarrollo web.",
+      "coverImage": "/covers/welcome.jpg",
+      "tags": [
+        "presentación",
+        "general"
+      ],
+      "published": true,
+      "createdAt": "2025-09-01T09:00:00.000Z",
+      "updatedAt": "2025-09-01T09:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Cómo crear rutas protegidas en React Router",
+      "slug": "rutas-protegidas-react-router",
+      "authorId": 2,
+      "authorName": "Editora del Blog",
+      "excerpt": "Aprende a proteger rutas con un wrapper que comprueba si el usuario está autenticado.",
+      "content": "Crea un componente PrivateRoute que verifique el estado de autenticación y use <Navigate /> si no hay sesión.",
+      "coverImage": "/covers/router.jpg",
+      "tags": [
+        "react",
+        "router",
+        "auth"
+      ],
+      "published": true,
+      "createdAt": "2025-09-05T10:30:00.000Z",
+      "updatedAt": "2025-09-05T11:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Uso básico de fetch para CRUD",
+      "slug": "uso-basico-de-fetch-para-crud",
+      "authorId": 1,
+      "authorName": "Admin Principal",
+      "excerpt": "Ejemplos de GET, POST, PUT/PATCH y DELETE contra una API REST usando fetch.",
+      "content": "Con fetch puedes hacer peticiones HTTP nativas. Maneja headers, JSON.stringify en el body y estados de respuesta.",
+      "coverImage": "/covers/fetch.jpg",
+      "tags": [
+        "javascript",
+        "fetch",
+        "api"
+      ],
+      "published": false,
+      "createdAt": "2025-09-10T16:00:00.000Z",
+      "updatedAt": "2025-09-10T16:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": 1,
+      "author": "Invitado",
+      "content": "¡Suerte con el blog! Estaré atento a nuevos posts.",
+      "createdAt": "2025-09-02T08:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "postId": 2,
+      "author": "Dev Junior",
+      "content": "El ejemplo de PrivateRoute me ha venido genial, gracias.",
+      "createdAt": "2025-09-06T09:15:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "General",
+      "slug": "general"
+    },
+    {
+      "id": "2",
+      "name": "React",
+      "slug": "react"
+    },
+    {
+      "id": "3",
+      "name": "JavaScript",
+      "slug": "javascript"
+    }
+  ]
+}
