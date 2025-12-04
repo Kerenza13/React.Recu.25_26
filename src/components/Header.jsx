@@ -5,17 +5,22 @@ export default function Header() {
   const { isLoggedIn, logout } = useAuth();
 
   return (
-    <header className="bg-gray-800 text-white py-4 shadow">
-      <div className="container mx-auto flex justify-between px-4">
-        <h1 className="font-bold text-xl">
+    <header>
+      <div>
+        <h1>
           <Link to="/">Mi Blog</Link>
         </h1>
-        <nav className="space-x-4">
+        <nav>
           <Link to="/">Inicio</Link>
           {isLoggedIn ? (
             <>
               <Link to="/dashboard">Dashboard</Link>
-              <button onClick={() => { logout(); window.location.href = "/";}} className="text-red-400">
+              <button
+                onClick={() => {
+                  logout();
+                  window.location.href = "/";
+                }}
+              >
                 Cerrar sesión
               </button>
             </>

@@ -51,48 +51,39 @@ export default function AuthPage() {
       </div>
 
       {!isRegistering ? (
-        <form onSubmit={handleLogin} className="space-y-3">
+        <form onSubmit={handleLogin}>
           <input
-            className="w-full border p-2 rounded"
             placeholder="Usuario"
             value={loginUsername}
             onChange={(e) => setLoginUsername(e.target.value)}
           />
           <input
-            className="w-full border p-2 rounded"
             type="password"
             placeholder="Contraseña"
             value={loginPassword}
             onChange={(e) => setLoginPassword(e.target.value)}
           />
-          <button className="w-full bg-blue-600 text-white py-2 rounded">
-            Entrar
-          </button>
+          <button>Entrar</button>
         </form>
       ) : (
         <form onSubmit={handleRegister} className="space-y-3">
           <input
-            className="w-full border p-2 rounded"
             placeholder="Nombre completo"
             value={regName}
             onChange={(e) => setRegName(e.target.value)}
           />
           <input
-            className="w-full border p-2 rounded"
             placeholder="Usuario"
             value={regUsername}
             onChange={(e) => setRegUsername(e.target.value)}
           />
           <input
-            className="w-full border p-2 rounded"
             type="password"
             placeholder="Contraseña"
             value={regPassword}
             onChange={(e) => setRegPassword(e.target.value)}
           />
-          <button className="w-full bg-green-600 text-white py-2 rounded">
-            Registrarse
-          </button>
+          <button>Registrarse</button>
         </form>
       )}
     </div>

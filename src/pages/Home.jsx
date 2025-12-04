@@ -13,8 +13,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Últimos Posts</h1>
+    <main>
+      <h1>Últimos Posts</h1>
 
       <PostList posts={posts} />
     </main>

@@ -1,19 +1,31 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext();
 
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    JSON.parse(localStorage.getItem("isLoggedIn")) || false
-  );
-
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   const API_URL = import.meta.env.VITE_API_URL;
+
+  useEffect(() => {
+    const storedLogged = localStorage.getItem("isLoggedIn");
+    const storedUser = localStorage.getItem("user");
+
+    if (storedLogged === "true" && storedUser) {
+      try {
+        const parsed = JSON.parse(storedUser);
+        if (parsed?.username && parsed?.name) {
+          setIsLoggedIn(true);
+          setUser(parsed);
+        }
+      } catch {
+        localStorage.removeItem("user");
+      }
+    }
+  }, []);
 
   const login = async (username, password) => {
     const res = await fetch(
@@ -22,7 +34,7 @@ export const AuthProvider = ({ children }) => {
     const data = await res.json();
 
     if (data.length > 0) {
-      const foundUser = data[0]; 
+      const foundUser = data[0];
 
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("user", JSON.stringify(foundUser));
