@@ -58,7 +58,6 @@ export default function DashboardPage() {
 
   return (
     <main>
-      {/* Header */}
       <header>
         <h1>Panel de administración</h1>
 
@@ -72,7 +71,6 @@ export default function DashboardPage() {
         </button>
       </header>
 
-      {/* Form Section */}
       {showForm && (
         <section>
           <h2>{editingPost ? "Editar post" : "Nuevo post"}</h2>
@@ -85,7 +83,6 @@ export default function DashboardPage() {
         </section>
       )}
 
-      {/* Posts List */}
       <ul>
         {posts.map((p) => (
           <li key={p.id}>
