@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import ProtectedRoute from "../components/ProtectedRoute";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Detail from "../pages/Detail";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,16 @@ export const router = createBrowserRouter([
         <Dashboard />
         <Footer />
       </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/detail/:id",
+    element: (
+      <>
+        <Header />
+        <Detail />
+        <Footer />
+      </>
     ),
   },
 ]);

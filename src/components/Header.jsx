@@ -15,7 +15,7 @@ export default function Header() {
           {isLoggedIn ? (
             <>
               <Link to="/dashboard">Dashboard</Link>
-              <button onClick={logout} className="text-red-400">
+              <button onClick={() => { logout(); window.location.href = "/";}} className="text-red-400">
                 Cerrar sesión
               </button>
             </>

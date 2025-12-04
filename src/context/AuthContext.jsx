@@ -9,6 +9,10 @@ export const AuthProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("isLoggedIn")) || false
   );
 
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || null
+  );
+
   const API_URL = import.meta.env.VITE_API_URL;
 
   const login = async (username, password) => {
@@ -18,8 +22,14 @@ export const AuthProvider = ({ children }) => {
     const data = await res.json();
 
     if (data.length > 0) {
+      const foundUser = data[0]; 
+
       localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("user", JSON.stringify(foundUser));
+
+      setUser(foundUser);
       setIsLoggedIn(true);
+
       return true;
     } else {
       alert("Credenciales inválidas");
@@ -35,6 +45,7 @@ export const AuthProvider = ({ children }) => {
       alert("El nombre de usuario ya está en uso.");
       return false;
     }
+
     const newUser = {
       username,
       password,
@@ -59,11 +70,22 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("user");
+
     setIsLoggedIn(false);
+    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout, register }}>
+    <AuthContext.Provider
+      value={{
+        isLoggedIn,
+        user,
+        login,
+        logout,
+        register,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

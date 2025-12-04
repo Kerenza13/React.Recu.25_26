@@ -20,6 +20,13 @@
       "password": "cmd123",
       "name": "carlos",
       "role": "user"
+    },
+    {
+      "id": "d7ab",
+      "username": "C.M.D",
+      "password": "123456789",
+      "name": "Mondongo",
+      "role": "user"
     }
   ],
   "posts": [
@@ -73,8 +80,16 @@
         "api"
       ],
       "published": false,
-      "createdAt": "2025-09-10T16:00:00.000Z",
+      "createdAt": 1764861259542,
       "updatedAt": "2025-09-10T16:00:00.000Z"
+    },
+    {
+      "id": "0386",
+      "title": "qw",
+      "excerpt": "qw",
+      "content": "qw",
+      "createdAt": 1764863379691,
+      "authorName": ""
     }
   ],
   "comments": [
