@@ -16,14 +16,21 @@ export default function Detail() {
   if (!post) return <p>Cargando...</p>;
 
   return (
-    <main>
-      <h1>{post.title}</h1>
+<main className="max-w-3xl mx-auto px-6 py-16">
+  <article className="bg-white rounded-2xl shadow-md border border-gray-100 p-10">
+    <h1 className="text-4xl font-bold text-gray-900 leading-tight">
+      {post.title}
+    </h1>
 
-      <p>
-        Por {post.authorName} — {new Date(post.createdAt).toLocaleDateString()}
-      </p>
+    <p className="mt-4 text-sm text-gray-500">
+      Por <span className="font-medium text-gray-700">{post.authorName}</span> —{" "}
+      {new Date(post.createdAt).toLocaleDateString()}
+    </p>
 
+    <div className="mt-8 text-gray-800 leading-relaxed space-y-6">
       <p>{post.content}</p>
-    </main>
+    </div>
+  </article>
+</main>
   );
 }

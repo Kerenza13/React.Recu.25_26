@@ -13,10 +13,17 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main>
-      <h1>Últimos Posts</h1>
+<main className="max-w-6xl mx-auto px-6 py-16">
+  <header className="mb-12 text-center">
+    <h1 className="text-4xl font-bold text-gray-900">
+      Últimos Posts
+    </h1>
+    <p className="mt-3 text-gray-500">
+      Descubre las publicaciones más recientes
+    </p>
+  </header>
 
-      <PostList posts={posts} />
-    </main>
+  <PostList posts={posts} />
+</main>
   );
 }
